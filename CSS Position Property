@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Property Demo</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .section-label {
+            font-weight: bold;
+            margin-top: 30px;
+            display: block;
+        }
+
+        /* Demo Boxes Base Style */
+        .box {
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+            width: fit-content;
+            min-width: 200px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* 1. STATIC - Default document flow */
+        .static-box {
+            background-color: #00d4ff; /* Light Blue */
+            position: static;
+            margin-bottom: 20px;
+        }
+
+        /* 2. RELATIVE - Moved from its original spot, but original spot is kept empty */
+        .relative-box {
+            background-color: #0000ff; /* Dark Blue */
+            position: relative;
+            top: 15px;
+            left: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Container for Absolute positioning context */
+        .absolute-container {
+            border: 2px dashed #999;
+            height: 200px;
+            margin-top: 20px;
+            padding: 10px;
+            position: relative; /* This is the anchor for the absolute box */
+            background-color: white;
+        }
+
+        /* 3. ABSOLUTE - Removed from flow, placed relative to nearest positioned ancestor */
+        .absolute-box {
+            background-color: #007bff; /* Medium Blue */
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* 4. FIXED - Stuck to the browser window, ignores scrolling */
+        .fixed-box {
+            background-color: #ff007f; /* Pink/Magenta */
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 8px 15px;
+            z-index: 1000;
+            font-size: 14px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* 5. STICKY - Sticks to a scroll position (Bonus) */
+        .sticky-box {
+            background-color: #28a745; /* Green */
+            position: sticky;
+            top: 0;
+            margin-bottom: 20px;
+            z-index: 10;
+        }
+
+        .scroll-space {
+            height: 1000px; /* Forces page to scroll so you can see fixed/sticky behavior */
+            padding-top: 20px;
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FIXED BOX -->
+    <div class="fixed-box">I stay fixed on screen 📌</div>
+
+    <h1>Position property Demo</h1>
+
+    <!-- STATIC SECTION -->
+    <span class="section-label">1. Static (Default)</span>
+    <div class="box static-box">I am static (no moves)</div>
+
+    <!-- RELATIVE SECTION -->
+    <span class="section-label">2. Relative</span>
+    <div class="box relative-box">I am relative (moved 15px down, 30px right)</div>
+
+    <!-- ABSOLUTE SECTION -->
+    <span class="section-label">3. Absolute</span>
+    <div class="absolute-container">
+        <p>I am the parent container (position: relative).</p>
+        <div class="box absolute-box">I am absolute (bottom/right)</div>
+    </div>
+
+    <!-- STICKY SECTION -->
+    <span class="section-label">4. Sticky (Scroll down to see)</span>
+    <div class="box sticky-box">I stick to the top when you scroll!</div>
+
+    <div class="scroll-space">
+        <p>--- Scroll down to see Fixed and Sticky positions in action ---</p>
+        <p>CSS positioning allows you to control exactly where elements appear on the page.</p>
+        <p>Keep scrolling...</p>
+        <p>Notice the pink box never moves from the top left corner!</p>
+    </div>
+
+</body>
+</html>
