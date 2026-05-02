@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Demo</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+        }
+
+        .box {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+
+    <!-- Internal JavaScript -->
+    <script>
+        function showInternal() {
+            document.getElementById("internalText").innerHTML =
+                "✅ Internal JavaScript Executed";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>JavaScript Types</h1>
+
+    <!-- Inline -->
+    <div class="box">
+        <h3>Inline JavaScript</h3>
+        <button onclick="alert('✅ Inline JavaScript Executed')">
+            Click Inline
+        </button>
+    </div>
+
+    <!-- Internal -->
+    <div class="box">
+        <h3>Internal JavaScript</h3>
+        <button onclick="showInternal()">
+            Click Internal
+        </button>
+        <p id="internalText"></p>
+    </div>
+
+    <!-- External -->
+    <div class="box">
+        <h3>External JavaScript</h3>
+        <button onclick="showExternal()">
+            Click External
+        </button>
+        <p id="externalText"></p>
+    </div>
+
+    <!-- External JS (placed separately like external file concept) -->
+    <script>
+        function showExternal() {
+            document.getElementById("externalText").innerHTML =
+                "✅ External JavaScript Executed";
+        }
+    </script>
+
+</body>
+</html>
