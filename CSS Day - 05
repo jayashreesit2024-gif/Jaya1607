@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox Demo</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+            color: #333;
+        }
+
+        h2 {
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- THE FLEXBOX CODE STARTS HERE --- */
+
+        /* The Parent Container */
+        .flex-container {
+            display: flex; /* This activates Flexbox */
+            background-color: #ffffff;
+            border: 2px dashed #ccc;
+            padding: 15px;
+            gap: 15px; /* Adds space between items */
+            min-height: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* Individual Flex Items */
+        .flex-item {
+            background-color: #2196F3;
+            color: white;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* 1. Flex Direction Examples */
+        .dir-row { flex-direction: row; }
+        .dir-col { flex-direction: column; height: auto; }
+
+        /* 2. Flex Wrap Examples */
+        .wrap-yes { flex-wrap: wrap; }
+        .wrap-no { flex-wrap: nowrap; }
+
+        /* 3. Justify Content (Main Axis) */
+        .jc-start { justify-content: flex-start; }
+        .jc-center { justify-content: center; }
+        .jc-between { justify-content: space-between; }
+
+        /* 4. Align Items (Cross Axis) */
+        .ai-center { align-items: center; }
+        .ai-end { align-items: flex-end; }
+
+    </style>
+</head>
+<body>
+
+    <h1>CSS Day 5: Flexbox Interactive Demo</h1>
+    <hr>
+
+    <!-- Section 1: Flex Direction -->
+    <h2>1. Flex Direction</h2>
+    <p><code>flex-direction: row;</code> (Default)</p>
+    <div class="flex-container dir-row">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </div>
+
+    <p><code>flex-direction: column;</code></p>
+    <div class="flex-container dir-col">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </div>
+
+    <!-- Section 2: Flex Wrap -->
+    <h2>2. Flex Wrap</h2>
+    <p><code>flex-wrap: wrap;</code> (Items will drop to the next line if space is tight)</p>
+    <div class="flex-container wrap-yes">
+        <!-- Many items to force a wrap -->
+        <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div>
+        <div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div>
+        <div class="flex-item">7</div><div class="flex-item">8</div>
+    </div>
+
+    <!-- Section 3: Alignment (Main Axis) -->
+    <h2>3. Justify Content (Main Axis)</h2>
+    <p><code>justify-content: space-between;</code></p>
+    <div class="flex-container jc-between">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </div>
+
+    <p><code>justify-content: center;</code></p>
+    <div class="flex-container jc-center">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </div>
+
+    <!-- Section 4: Alignment (Cross Axis) -->
+    <h2>4. Align Items (Cross Axis)</h2>
+    <p><code>align-items: center;</code> (Items centered vertically in the container)</p>
+    <div class="flex-container ai-center" style="height: 200px;">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </div>
+
+</body>
+</html>
