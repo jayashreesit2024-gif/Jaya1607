@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors</title>
+
+    <style>
+        *{
+            font-family: 'Times New Roman';
+        }
+
+        h1{
+            color: brown;
+        }
+
+        #main{
+            color: red;
+        }
+
+        .text{
+            background-color: aqua;
+            font-size: xx-small;
+        }
+
+        div > p{
+            color: green;
+        }
+
+        #madhu{
+            color: rgb(72, 0, 255);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Selectors-4</h1>
+
+    <h2 id="main">Id selector</h2>
+
+    <p class="text">main 1</p>
+    <p class="text">main 2</p>
+    <p class="text">main 3</p>
+
+    <p>main4</p>
+
+    <h1>complete css</h1>
+
+    <div>
+        <p>Direct child</p>
+
+        <section>
+            <p id="jaya">Nested paragraph</p>
+        </section>
+    </div>
+
+</body>
+</html>
