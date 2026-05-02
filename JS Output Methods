@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Output Methods</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align: center;
+            margin: 30px;
+        }
+
+        h1{
+            background: linear-gradient(to right, blue, cyan);
+            color: white;
+            padding: 10px;
+        }
+
+        button{
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            background: #333;
+            color: white;
+        }
+
+        button:hover{
+            background: #555;
+        }
+
+        #output{
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Output Methods</h1>
+
+    <!-- INNER HTML -->
+    <button onclick="showInnerHTML()">Inner HTML</button>
+
+    <!-- DOCUMENT WRITE -->
+    <button onclick="showDocumentWrite()">Document Write</button>
+
+    <!-- ALERT -->
+    <button onclick="showAlert()">Alert Box</button>
+
+    <!-- CONSOLE -->
+    <button onclick="showConsole()">Console Log</button>
+
+    <!-- INLINE JS -->
+    <button onclick="document.getElementById('output').innerHTML='Inline JS Executed!'">
+        Inline JS
+    </button>
+
+    <p id="output">Output will appear here...</p>
+
+    <!-- INTERNAL JAVASCRIPT -->
+    <script>
+        function showInnerHTML(){
+            document.getElementById("output").innerHTML = "This is InnerHTML Output";
+        }
+
+        function showDocumentWrite(){
+            document.write("This is Document.write() Output");
+        }
+
+        function showAlert(){
+            alert("This is Alert Output!");
+        }
+
+        function showConsole(){
+            console.log("This is Console Output");
+            alert("Check console (Right click → Inspect → Console)");
+        }
+    </script>
+
+    <!-- EXTERNAL JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
