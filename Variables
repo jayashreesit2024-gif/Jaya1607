@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: aqua;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin: 10px;
+    }
+    h1{
+        background-color: aquamarine;
+        color: aliceblue;
+    }
+    .card{
+        background-color: aliceblue;
+        padding: 20px;
+        margin: 20px auto;
+        width: 360px;
+        border: 10px;
+        box-shadow: 0 4px 10px rgba(red, green, blue, 0.1);
+    }
+    button{
+        padding: 30px;
+        background-color: bisque;
+        border-radius: 25px;
+        width: 200px;
+        cursor: pointer;
+        border: none;
+    }
+    button:hover{
+        background-color: blue;
+        color: aliceblue;
+    }
+    #output{
+        margin-top: 20px;
+        font-weight: bold;
+        color: green;
+    }
+</style>
+<body>
+    <H2>Variables</H2>
+    <Scope>Hosting</Scope>
+    <h1>JS Variable declaration</h1>
+    <div class="card">
+        <h2>var vs let vs const</h2>
+        <button onclick="showVariables()">Run</button>
+    </div>
+    <div class="card">
+        <h2>Hosting and tdz</h2>
+        <button onclick="showHosting()">Check</button>
+    </div>
+    <div class="card">
+        <h2>Reassignment and re declartion</h2>
+        <button onclick="showReassign()">Run</button>
+    </div>
+    <div class="card">
+        <h2>Scope</h2>
+        <button onclick="showScope()">check</button>
+    </div>
+    <p id="output">output will appear here</p>
+</body>
+<script>
+/* x=10;
+    console.log(x);
+    var x=10;
+    console.log(x);
+     var x=20;
+    console.log(x);
+    let y=20;
+    console.log(y);
+     y=20;
+    console.log(y);
+
+    
+    const x=30;
+    console.log(x);
+    x=330;
+    console.log(y);*/
+/*console.log(a);
+var a=30;
+
+var b;
+b=40;
+console.log(b);*/
+
+
+/*console.log(c);
+let c=30;*/
+function showVariables(){
+    var a=10;
+    let br=20;
+    const c=30;
+    document.getElementById("output").innerText="var a="+a+" , let b=" +b+" ", "const c="+c ;
+}
+function showHosting(){
+    console.clear();
+    console.log("hosting");
+    console.log(x);
+    var x=10;
+
+    console.log("TDZ");
+    try{
+        console.log(y);
+    } catch(err){
+        console.log("error",err.message);
+    }
+    let y=20;
+}
+function showReassign(){
+    let a=20;
+    a=20;
+
+    var r=10;
+    var r=30;   
+
+    const g=30;
+    document.getElementById("output").innerText="let"+a+"var" +r+ "const"+g;
+}
+function showScope(){
+    let message="global message"
+    function testScope(){
+        let message="Function Scope";
+        console.log(messages);
+    }
+    testScope();
+    {
+        let block="block scope";
+        console.log(block);
+    }
+    document.getElementById("output").innerText="check console for scope outputs";
+
+}
+
+</script>
+</html>
